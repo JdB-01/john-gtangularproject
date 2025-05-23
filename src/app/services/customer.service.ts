@@ -7,16 +7,16 @@ import { Customer } from '../view-customer/view-customer.component';
 })
 export class CustomerService {
   private customers: Customer[] = [
-      new Customer('Lily', 'Musk', '09017328226', 'Aso Rock Villa, Abuja', 'lilym@gmail.com', 1),
-      new Customer('John', 'Dickson', '09004187432', 'Ajah, Lagos', 'bigd@gmail.com', 2),
-      new Customer('David', 'Solomon', '09023578241', 'Asokoro, Abuja', 'davido@gmail.com', 3),
-      new Customer('Hope', 'Bidemi', '08125684324', 'Surulere, Lagos', 'hope54@gmail.com', 4),
-      new Customer('Ese', 'Wilson', '07048921355', 'Ajah, Lagos', 'wilese@gmail.com', 5),
-      new Customer('Temi', 'Tayo', '08093257881', 'Lekki, Lagos', 'tt01@gmail.com', 6),
-      new Customer('Miriam', 'Bliss', '09026402318', 'Victoria Island, Lagos', 'blessed@gmail.com', 7),
-      new Customer('Mese', 'Lionel', '08036458079', 'Ikoyi, Lagos', 'olulionel@gmail.com', 8),
-      new Customer('Subomi', 'Angel', '07035814485', 'Lekki, Lagos', 'saucy@gmail.com', 9),
-      new Customer('Bolaji', 'Zuckerberg', '09002570752', 'Victoria Island, Lagos', 'boss@gmail.com', 10)
+      new Customer('Bolaji', 'Zuckerberg', '09002570752', 'boss@gmail.com', 'Victoria Island, Lagos',  1),
+      new Customer('Lily', 'Musk', '09017328226', 'lilym@gmail.com', 'Aso Rock Villa, Abuja', 2),
+      new Customer('John', 'Dickson', '09004187432', 'bigd@gmail.com', 'Ajah, Lagos',  3),
+      new Customer('David', 'Solomon', '09023578241', 'davido@gmail.com', 'Asokoro, Abuja',  4),
+      new Customer('Hope', 'Bidemi', '08125684324', 'hope54@gmail.com', 'Surulere, Lagos',  5),
+      new Customer('Ese', 'Wilson', '07048921355', 'wilese@gmail.com', 'Ajah, Lagos',  6),
+      new Customer('Temi', 'Tayo', '08093257881', 'tt01@gmail.com', 'Lekki, Lagos',  7),
+      new Customer('Miriam', 'Bliss', '09026402318', 'blessed@gmail.com', 'Victoria Island, Lagos',  8),
+      new Customer('Mese', 'Lionel', '08036458079', 'olulionel@gmail.com', 'Ikoyi, Lagos',  9),
+      new Customer('Subomi', 'Angel', '07035814485', 'saucy@gmail.com', 'Lekki, Lagos',  10),
   ];
   
   private customersSubject = new BehaviorSubject<Customer[]>(this.customers);
