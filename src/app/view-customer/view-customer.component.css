@@ -1,0 +1,88 @@
+
+   .customer-list-container {
+  animation: fadeIn 0.5s ease;
+}
+
+.filter-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.customer-stats {
+  font-size: 0.9rem;
+}
+
+.badge {
+  padding: 0.5em 0.8em;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.customer-table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.customer-row {
+  transition: all 0.2s ease;
+}
+
+.customer-row:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+.empty-state {
+  padding: 40px 20px;
+  color: #6c757d;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  opacity: 0.3;
+  margin-bottom: 15px;
+}
+
+.add-button {
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.input-group {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.form-control {
+  border-radius: 50px 0 0 50px;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #eaeaea;
+}
+
+.form-control:focus {
+  border-color: #6a11cb;
+  box-shadow: none;
+}
+
+.btn-outline-secondary {
+  border-radius: 0 50px 50px 0;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #eaeaea;
+  border-left: none;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+}

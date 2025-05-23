@@ -1,0 +1,118 @@
+<div class="edit-customer-container">
+  <div class="edit-card card" *ngIf="!loading && !customerNotFound">
+    <div class="card-header">
+      <h2><i class="fas fa-user-edit"></i> Edit Customer</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-4">
+          <label for="firstName" class="form-label field-label">
+            <i class="fas fa-user"></i> First Name
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="firstName" 
+            formControlName="firstName"
+            [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"
+            placeholder="Enter first name">
+          <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+            <div *ngIf="f['firstName'].errors['required']">First name is required</div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="lastName" class="form-label field-label">
+            <i class="fas fa-user"></i> Last Name
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="lastName" 
+            formControlName="lastName"
+            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }"
+            placeholder="Enter last name">
+          <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+            <div *ngIf="f['lastName'].errors['required']">Last name is required</div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="phoneNumber" class="form-label field-label">
+            <i class="fas fa-phone"></i> Phone Number
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="phoneNumber" 
+            formControlName="phoneNumber"
+            [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
+            placeholder="Enter phone number">
+          <div *ngIf="submitted && f['phoneNumber'].errors" class="invalid-feedback">
+            <div *ngIf="f['phoneNumber'].errors['required']">Phone number is required</div>
+            <div *ngIf="f['phoneNumber'].errors['pattern']">Please enter a valid phone number</div>
+          </div>
+        </div>
+
+<div class="mb-4">
+          <label for="email" class="form-label field-label">
+            <i class="fas fa-user"></i> Last Name
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="email" 
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+            placeholder="Enter email">
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email is required</div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="address" class="form-label field-label">
+            <i class="fas fa-home"></i> Address
+          </label>
+          <textarea 
+            class="form-control" 
+            id="address" 
+            formControlName="address" 
+            rows="3"
+            [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"
+            placeholder="Enter complete address"></textarea>
+          <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+            <div *ngIf="f['address'].errors['required']">Address is required</div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end buttons-container">
+          <button type="button" class="btn btn-secondary me-3" (click)="onCancel()">
+            <i class="fas fa-times"></i> Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Update Customer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="loading-container" *ngIf="loading">
+    <div class="spinner-border loading-spinner text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <h3>Loading customer data...</h3>
+    <p class="text-muted">Please wait while we fetch the customer information.</p>
+  </div>
+
+  <div class="not-found-container" *ngIf="!loading && customerNotFound">
+    <div class="alert alert-danger">
+      <h4><i class="fas fa-exclamation-triangle"></i> Customer Not Found</h4>
+      <p>We couldn't find the customer you're looking for. They may have been deleted or the ID is incorrect.</p>
+      <a routerLink="/customers" class="btn btn-primary mt-3">
+        <i class="fas fa-arrow-left"></i> Return to Customer List
+      </a>
+    </div>
+  </div>
+</div>

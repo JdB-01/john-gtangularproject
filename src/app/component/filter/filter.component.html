@@ -1,0 +1,15 @@
+<div class="input-group mb-3">
+  <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Search customers..." 
+    [formControl]="searchControl"
+    aria-label="Search customers">
+  <button 
+    class="btn btn-outline-secondary" 
+    type="button" 
+    (click)="clearSearch()" 
+    [disabled]="!searchControl.value">
+    Clear
+  </button>
+</div>
